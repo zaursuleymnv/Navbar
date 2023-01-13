@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zaur">
+    <meta descryption content="Presentation of website">
+    <meta name="keywords" content="technology, cyber security, software">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Open+Sans&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Navbar 4</title>
+</head>
+<body>
+    <nav class="navbar">
+        <button onclick="toggleMenu()" class="burger"></button>
+        <button class="button">Home</button>
+        <div class="dropdown-container">
+            <div class="dropdown">
+                <button class="button">
+                    Services
+                    <img src="assets/chevron.svg" alt="">
+                </button>
+                <div class="dropdown-menu">
+                    <button>New Office</button>
+                    <button>Remodels</button>
+                    <button>Equipment Selections</button>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="button">
+                    Products
+                    <img src="assets/chevron.svg" alt="">
+                </button>
+                <div class="dropdown-menu">
+                    <button>Group Product</button>
+                    <button>External Product</button>
+                    <button>Discounted Product</button>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="button">
+                    Support
+                    <img src="assets/chevron.svg" alt="">
+                </button>
+                <div class="dropdown-menu">
+                    <button>Planning & Design</button>
+                    <button>3D Modelling</button>
+                    <button>Rendering & Maping</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="copy animate__animated animate__rubberBand">
+        <p>
+            Inspired by <a href="https://github.com/zaursuleymnv" target="_blank">Zaur Suleymanlı</a>
+        </p>
+    </div>
+
+    <script text="text/javascript">
+        const toggleMenu = () => document.body.classList.toggle("open");
+    </script>
+</body>
+</html>
