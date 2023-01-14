@@ -160,22 +160,25 @@ body.open .navbar .burger {
     visibility: hidden;
     z-index: 2;
     transition-property: opacity, visibility;
-    transition-duration: 0.3s;
+    transition: .4s;
 }
 
 @media (width < 600px) {
     .navbar .dropdown-container {
-        transform: translateX(-100%);
+        transform: translate(-100%, 0);
         filter: blur(15px);
         padding-top: 3rem;
     }
 
     body.open .navbar .dropdown-container {
-        transform: translateX(0);
+        transform: translate(0, 0);
         opacity: 1;
         visibility: visible;
         filter: blur(0);
+        transition-property: translate;
+        transition: .5s;
     }
+
 }
 
 @media (width >= 600px) {
@@ -264,10 +267,6 @@ body.open .navbar .burger {
         visibility: visible;
         filter: blur(0);
     }
-}
-
-.navbar .dropdown-container .dropdown .dropdown-menu > button:hover {
-    opacity: 1;
 }
 
 .navbar .dropdown-container .dropdown .dropdown-menu > button{
