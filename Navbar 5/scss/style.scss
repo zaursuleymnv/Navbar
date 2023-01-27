@@ -1,0 +1,171 @@
+/* ======================================================================== */ 
+
+ /*                      NOT RELATED TO THE TTUTORIAL                        */
+
+/* ======================================================================== */
+
+@import 'partial/mixins';
+@import 'partial/variables';
+// @import "D:/MyProjects/Navbar Projects/Navbar 5/node_modules/bootstrap/scss/";
+// @import "../node_modules/bootstrap/scss/bootstrap";
+// @import "../css/custom_bootstrap.css";
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	list-style: none;
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	list-style: none;
+}
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.58rem + 0.60vw), 1.00rem);
+  --step--1: clamp(0.83rem, calc(0.67rem + 0.81vw), 1.25rem);
+  --step-0: clamp(1.00rem, calc(0.78rem + 1.10vw), 1.56rem);
+  --step-1: clamp(1.20rem, calc(0.91rem + 1.47vw), 1.95rem);
+  --step-2: clamp(1.44rem, calc(1.05rem + 1.95vw), 2.44rem);
+  --step-3: clamp(1.73rem, calc(1.21rem + 2.58vw), 3.05rem);
+  --step-4: clamp(2.07rem, calc(1.39rem + 3.40vw), 3.82rem);
+  --step-5: clamp(2.49rem, calc(1.60rem + 4.45vw), 4.77rem);
+	
+}
+
+// html, body {
+//     height: 100%;
+// }
+
+
+/* ======================================================================== */ 
+
+ /*                      RELATED TO THE TTUTORIAL                        */
+
+/* ======================================================================== */
+
+body {
+    background: #2d2f33;
+}
+
+button {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 73px;
+    color: #f9f9f9;
+    background: $navbar-bg;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+
+    @media screen and (min-width: 600px) {
+        justify-content: space-between;
+    }
+
+    .search {
+        position: relative;
+        width: 300px;
+        height: 45px;
+        flex: 1 1 auto;
+        color: $search-input-text;
+        background: $search-input-bg;
+        border: 0;
+        outline: 0;
+        padding-left: 2rem;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1;
+        &:focus {
+            background: $search-input-bg-focus;
+            @include transition(all .3s ease);
+        }
+        &::placeholder {
+            color: $search-input-text;
+        }
+
+        @media screen and (min-width: 600px) {
+            flex: 0 0 360px;
+            margin-right: auto;
+            opacity: 1;
+            visibility: visible;
+            transition-property: opacity, visibility;
+            @include transition(all .3s ease);
+        }
+    }
+    .search-toggle {
+        position: fixed;
+        left: 40px;
+        width: 40px;
+        height: 40px;
+        color: #f9f9f9;
+        background-image:url("img/search.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 2;
+
+        @media screen and (min-width: 600px) {
+            @include transform(translate(10px, 0));
+            scale: .65;
+            pointer-events: none;
+        }
+    }
+    .navbar-menu {
+        display: flex;
+    }
+    .navbar-menu > button {
+        position: relative;
+        width: 70px;
+        height: 100%;
+        color: #f9f9f9;
+        display: grid;
+        place-items: center;
+        font-size: var(--step-0);
+        opacity: .4;
+    }
+    .navbar-menu > button.active {
+        opacity: 1;
+    }
+}
+
+body.open .search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    background: $navbar-bg;
+    margin: 0;
+    padding-left: 3.5rem;
+    border-radius: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+body.open .search-toggle {
+    background-image:url(img/close.svg);
+}
+
+
+

@@ -1,0 +1,156 @@
+/* ======================================================================== */
+/*                      NOT RELATED TO THE TTUTORIAL                        */
+/* ======================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.58rem + 0.60vw), 1.00rem);
+  --step--1: clamp(0.83rem, calc(0.67rem + 0.81vw), 1.25rem);
+  --step-0: clamp(1.00rem, calc(0.78rem + 1.10vw), 1.56rem);
+  --step-1: clamp(1.20rem, calc(0.91rem + 1.47vw), 1.95rem);
+  --step-2: clamp(1.44rem, calc(1.05rem + 1.95vw), 2.44rem);
+  --step-3: clamp(1.73rem, calc(1.21rem + 2.58vw), 3.05rem);
+  --step-4: clamp(2.07rem, calc(1.39rem + 3.40vw), 3.82rem);
+  --step-5: clamp(2.49rem, calc(1.60rem + 4.45vw), 4.77rem);
+}
+
+/* ======================================================================== */
+/*                      RELATED TO THE TTUTORIAL                        */
+/* ======================================================================== */
+body {
+  background: #2d2f33;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 73px;
+  color: #f9f9f9;
+  background: #19191c;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1;
+}
+@media screen and (min-width: 600px) {
+  .navbar {
+    justify-content: space-between;
+  }
+}
+.navbar .search {
+  position: relative;
+  width: 300px;
+  height: 45px;
+  flex: 1 1 auto;
+  color: #8f8f8f;
+  background: rgb(102, 103, 108);
+  border: 0;
+  outline: 0;
+  padding-left: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+.navbar .search:focus {
+  background: rgb(58, 59, 62);
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.navbar .search::placeholder {
+  color: #8f8f8f;
+}
+@media screen and (min-width: 600px) {
+  .navbar .search {
+    flex: 0 0 360px;
+    margin-right: auto;
+    opacity: 1;
+    visibility: visible;
+    transition-property: opacity, visibility;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+}
+.navbar .search-toggle {
+  position: fixed;
+  left: 40px;
+  width: 40px;
+  height: 40px;
+  color: #f9f9f9;
+  background-image: url("img/search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+}
+@media screen and (min-width: 600px) {
+  .navbar .search-toggle {
+    -webkit-transform: translate(10px, 0);
+    -ms-transform: translate(10px, 0);
+    transform: translate(10px, 0);
+    scale: 0.65;
+    pointer-events: none;
+  }
+}
+.navbar .navbar-menu {
+  display: flex;
+}
+.navbar .navbar-menu > button {
+  position: relative;
+  width: 70px;
+  height: 100%;
+  color: #f9f9f9;
+  display: grid;
+  place-items: center;
+  font-size: var(--step-0);
+  opacity: 0.4;
+}
+.navbar .navbar-menu > button.active {
+  opacity: 1;
+}
+
+body.open .search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  background: #19191c;
+  margin: 0;
+  padding-left: 3.5rem;
+  border-radius: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+body.open .search-toggle {
+  background-image: url(img/close.svg);
+}/*# sourceMappingURL=style.css.map */
